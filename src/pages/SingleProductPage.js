@@ -21,11 +21,11 @@ const SingleProductPage = () => {
     single_product_loading: loading,
     single_product_error: error,
     single_product: product,
-    fetchSingleProdict,
+    fetchSingleProduct,
   } = useProductsContext();
 
   useEffect(() => {
-    fetchSingleProdict(`${url}${id}`);
+    fetchSingleProduct(`${url}${id}`);
   }, [id]);
 
   useEffect(() => {
@@ -65,7 +65,7 @@ const SingleProductPage = () => {
           <ProductImages images={images} />
           <section className="content">
             <h2>{name}</h2>
-            <Stars />
+            <Stars stars={stars} reviews={reviews} />
             <h5 className="price">{formatPrice(price)}</h5>
             <p className="desc">{description}</p>
             <p className="info">
