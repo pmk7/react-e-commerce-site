@@ -8,13 +8,13 @@ const Filters = () => {
   const {
     filters: {
       text,
-      category,
       company,
+      category,
+      color,
       min_price,
       max_price,
       price,
       shipping,
-      color,
     },
     updateFilters,
     clearFilters,
@@ -94,6 +94,7 @@ const Filters = () => {
                     <button
                       key={index}
                       name="color"
+                      type="button"
                       onClick={updateFilters}
                       data-color="all"
                       className={`${
@@ -108,6 +109,7 @@ const Filters = () => {
                   <button
                     key={index}
                     name="color"
+                    type="button"
                     style={{ background: c }}
                     className={`${
                       color === c ? 'color-btn active' : 'color-btn'
